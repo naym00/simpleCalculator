@@ -1,0 +1,11 @@
+def operation(num1, num2, sign):
+    if sign == "+":
+        return num1 + num2
+    elif sign == "-":
+        return num1 - num2
+    elif sign == "×":
+        return num1 * num2
+    elif sign == "÷":
+        return num1 / num2
+    elif sign == "%":
+        return num1 % num2

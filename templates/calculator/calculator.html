@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: powderblue;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .fullFrame {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: white;
+            height: 400px;
+            width: 300px;
+            border: 2px solid black;
+        }
+        .display {
+            font-family: "Times New Roman", Times, serif;
+            background: white;
+            font-size: 32px;
+            border-style: none none solid none;
+            border-width: 2px;
+            height: 75px;
+            text-align: right;
+        }
+        .horizontalLine {
+            border-top: 2px solid black;
+        }
+        .buttonBody {
+            background: black;
+            border: 2px solid black;
+            height: 319px;
+        }
+        .line1, .line2, .line3, .line4, .line5{
+            background: black;
+            height: 50px;
+            border: 2px solid black;
+            margin: 8px;
+        }
+        button {
+            font-family: "Times New Roman", Times, serif;
+            background-color: darkslategray;
+            color: white;
+            border: 3px inset black;
+            border-radius: 20px;
+            font-size: 30px;
+            text-align: center;
+            width: 65px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: darkcyan;
+            transition-duration: 0.4s;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="fullFrame">
+            <div class="display">
+                {{ firstNumber }} {{ sign }} {{ secondNumber }}<br>
+                <hr class="horizontalLine">
+                {{ result }}<br>
+            </div>
+
+            <div class="buttonBody">
+                <div class="line1">
+                    <button type="submit" name="9">9</button>
+                    <button type="submit" name="8">8</button>
+                    <button type="submit" name="AC">AC</button>
+                    <button type="submit" name="C">C</button>
+                </div>
+
+                <div class="line2">
+                    <button type="submit" name="7">7</button>
+                    <button type="submit" name="6">6</button>
+                    <button type="submit" name="5">5</button>
+                    <button type="submit" name="4">4</button>
+                </div>
+
+                <div class="line3">
+                    <button type="submit" name="3">3</button>
+                    <button type="submit" name="2">2</button>
+                    <button type="submit" name="1">1</button>
+                    <button type="submit" name="0">0</button>
+                </div>
+
+                <div class="line4">
+                    <button type="submit" name=".">.</button>
+                    <button type="submit" name="INT">INT</button>
+                    <button type="submit" name="+">+</button>
+                    <button type="submit" name="-">-</button>
+                </div>
+
+                <div class="line5">
+                    <button type="submit" name="×">×</button>
+                    <button type="submit" name="÷">÷</button>
+                    <button type="submit" name="%">%</button>
+                    <button type="submit" name="=">=</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</header>
+</body>
+</html>
